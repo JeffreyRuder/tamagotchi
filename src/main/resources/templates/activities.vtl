@@ -3,3 +3,10 @@
 <h1>$userTamagotchi.getSleepLevel()</h1>
 <h1>$userTamagotchi.getFunLevel()</h1>
 <h1>$userTamagotchi.getStatus()</h1>
+
+<form action="/confirmation" method="post">
+    <button type="submit" class="btn btn-default" id="food" value="food">Feed $userTamagotchi.getName()</button>
+    <button type="submit" class="btn btn-default" id="sleep" value="sleep">Put $userTamagotchi.getName() Down For A Nap</button>
+    <button type="submit" class="btn btn-default" id="play" value="play">Play With $userTamagotchi.getName()</button>
+    <button type="submit" class="btn btn-default" id="check" value="check">Check On $userTamagotchi.getName()</button>
+</form>
