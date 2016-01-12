@@ -1,1 +1,26 @@
-
+#if ($userTamagotchi.isDead())
+  <h1>Alas, $userTamagotchi.getName() has perished.</h1>
+  <form action="/" method="get">
+      <button type="submit" class="btn btn-default" id="goBack">Maybe Next Time Will Be Different?</button>
+  </form>
+#elseif ($feed)
+  <h1>You fed $userTamagotchi.getName()!</h1>
+  <form action="/activities" method="post">
+      <button type="submit" class="btn btn-default" id="goBack">Now Do Something Else</button>
+  </form>
+#elseif ($sleep)
+  <h1>$userTamagotchi.getName() takes a nap!</h1>
+  <form action="/activities" method="post">
+      <button type="submit" class="btn btn-default" id="goBack">Now Do Something Else</button>
+  </form>
+#elseif ($play)
+  <h1>You play with $userTamagotchi.getName()!</h1>
+  <form action="/activities" method="post">
+      <button type="submit" class="btn btn-default" id="goBack">Now Do Something Else</button>
+  </form>
+#else
+  <h1>$userTamagotchi.getStatus()</h1>
+  <form action="/activities" method="post">
+      <button type="submit" class="btn btn-default" id="goBack">Now Do Something Else</button>
+  </form>
+#end

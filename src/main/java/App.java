@@ -41,5 +41,54 @@ public class App {
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/confirmation", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      boolean feed = false;
+      boolean sleep = false;
+      boolean play = false;
+      boolean check = false;
+
+      Tamagotchi userTamagotchi = request.session().attribute("userTamagotchi");
+
+      // userTamagotchi.decFun();
+      // userTamagotchi.decSleep();
+      // userTamagotchi.decFood();
+      // userTamagotchi.decFun();
+      // userTamagotchi.decSleep();
+      // userTamagotchi.decFood();
+
+      String action = request.queryParams("activity");
+
+      if (action.equals("food")) {
+        userTamagotchi.addFood();
+        feed = true;
+      } else if (action.equals("sleep")) {
+        userTamagotchi.addSleep();
+        sleep = true;
+      } else if (action.equals("play")) {
+        userTamagotchi.addFun();
+        play = true;
+      } else {
+        check = true;
+      }
+
+      request.session().attribute("userTamagotchi", userTamagotchi);
+
+      model.put("feed", feed);
+      model.put("sleep", sleep);
+      model.put("play", play);
+      model.put("check", check);
+
+      model.put("userTamagotchi", request.session().attribute("userTamagotchi"));
+      model.put("template", "templates/confirmation.vtl");
+
+      if (userTamagotchi.isDead()) {
+        request.session().removeAttribute("userTamagotchi");
+      }
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 }
