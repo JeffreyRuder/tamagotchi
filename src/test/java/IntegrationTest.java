@@ -20,4 +20,21 @@ public class IntegrationTest extends FluentTest {
     goTo("http://localhost:4567");
     assertThat(pageSource()).contains("Tamagotchi");
   }
+
+  @Test
+  public void userNameInfoIsCaptured_Sparky() {
+    goTo("http://localhost:4567");
+    fill("#name").with("Sparky");
+    submit(".btn");
+    assertThat(pageSource()).contains("Sparky");
+  }
+
+  @Test
+  public void tamagotchiInstantiatesWithName_Sparky() {
+    goTo("http://localhost:4567");
+    fill("#name").with("Sparky");
+    submit(".btn");
+    submit("#namedIt");
+    assertThat(pageSource()).contains("Sparky");
+  }
 }

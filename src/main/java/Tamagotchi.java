@@ -14,6 +14,10 @@ public class Tamagotchi {
     mName = name;
   }
 
+  public String getName() {
+    return mName;
+  }
+
   public int getFoodLevel() {
     return mFoodLevel;
   }
@@ -94,9 +98,9 @@ public class Tamagotchi {
 
   public ArrayList<Integer> getStatus() {
     ArrayList<Integer> status = new ArrayList<Integer>();
-    status.add(this.getFoodLevel());
-    status.add(this.getSleepLevel());
-    status.add(this.getFunLevel());
+    status.add(mFoodLevel);
+    status.add(mSleepLevel);
+    status.add(mFunLevel);
     return status;
   }
 

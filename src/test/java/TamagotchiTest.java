@@ -11,6 +11,13 @@ public class TamagotchiTest {
   }
 
   @Test
+  public void tamagotchiInstatiatesWithName_expectedName() {
+    Tamagotchi sparky = new Tamagotchi("Sparky");
+    String expectedName = "Sparky";
+    assertEquals(expectedName, sparky.getName());
+  }
+
+  @Test
   public void tamagotchiInstantiatesWithFoodLevel_true() {
     Tamagotchi sparky = new Tamagotchi("Sparky");
     assertEquals(10, sparky.getFoodLevel());
