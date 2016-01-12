@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Tamagotchi {
 
@@ -6,12 +8,17 @@ public class Tamagotchi {
   private int mFoodLevel = 10;
   private int mSleepLevel = 10;
   private int mFunLevel = 10;
+  private Timer mTimer;
+  private TimerTask mTimerTask;
   private static final int MAX_FOOD = 10;
   private static final int MAX_SLEEP = 10;
   private static final int MAX_FUN = 10;
 
   public Tamagotchi(String name) {
     mName = name;
+    mTimer = new Timer();
+    mTimerTask = new ReduceStats();
+    mTimer.schedule(mTimerTask, 0, 600);
   }
 
   public String getName() {
@@ -114,5 +121,18 @@ public class Tamagotchi {
     return false;
   }
 
+  public Timer getTimer() {
+    mTimer = new Timer();
+    return mTimer;
+    // mTimer.schedule (new ReduceTask(0, 600));
+  }
 
+  public class ReduceStats extends TimerTask {
+    @Override
+    public void run() {
+      decFood();
+      decSleep();
+      decFun();
+    }
+  }
 }
