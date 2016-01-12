@@ -53,13 +53,6 @@ public class App {
 
       Tamagotchi userTamagotchi = request.session().attribute("userTamagotchi");
 
-      // userTamagotchi.decFun();
-      // userTamagotchi.decSleep();
-      // userTamagotchi.decFood();
-      // userTamagotchi.decFun();
-      // userTamagotchi.decSleep();
-      // userTamagotchi.decFood();
-
       String action = request.queryParams("activity");
 
       if (action.equals("food")) {

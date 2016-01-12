@@ -13,12 +13,13 @@ public class Tamagotchi {
   private static final int MAX_FOOD = 10;
   private static final int MAX_SLEEP = 10;
   private static final int MAX_FUN = 10;
+  private static final int LIFESPAN_CONSTANT = 5000;
 
   public Tamagotchi(String name) {
     mName = name;
     mTimer = new Timer();
     mTimerTask = new ReduceStats();
-    mTimer.schedule(mTimerTask, 0, 600);
+    mTimer.schedule(mTimerTask, 0, LIFESPAN_CONSTANT);
   }
 
   public String getName() {
