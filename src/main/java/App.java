@@ -53,10 +53,6 @@ public class App {
 
       Tamagotchi userTamagotchi = request.session().attribute("userTamagotchi");
 
-      if (userTamagotchi.isDead()) {
-        userTamagotchi.cancelTimer();
-      }
-
       String userAction = request.queryParams("activity");
 
       if (userAction.equals("food")) {

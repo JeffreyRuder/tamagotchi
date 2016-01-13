@@ -13,7 +13,7 @@ public class Tamagotchi {
   private static final int MAX_FOOD = 10;
   private static final int MAX_SLEEP = 10;
   private static final int MAX_FUN = 10;
-  private static final int LIFESPAN_CONSTANT = 5000;
+  private static final int LIFESPAN_CONSTANT = 600;
 
   public Tamagotchi(String name) {
     mName = name;
