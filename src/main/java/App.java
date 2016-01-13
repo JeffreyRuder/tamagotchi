@@ -53,15 +53,19 @@ public class App {
 
       Tamagotchi userTamagotchi = request.session().attribute("userTamagotchi");
 
-      String action = request.queryParams("activity");
+      if (userTamagotchi.isDead()) {
+        userTamagotchi.cancelTimer();
+      }
 
-      if (action.equals("food")) {
+      String userAction = request.queryParams("activity");
+
+      if (userAction.equals("food")) {
         userTamagotchi.addFood();
         feed = true;
-      } else if (action.equals("sleep")) {
+      } else if (userAction.equals("sleep")) {
         userTamagotchi.addSleep();
         sleep = true;
-      } else if (action.equals("play")) {
+      } else if (userAction.equals("play")) {
         userTamagotchi.addFun();
         play = true;
       } else {

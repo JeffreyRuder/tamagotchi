@@ -1,25 +1,36 @@
 #if ($userTamagotchi.isDead())
   <h1>Alas, $userTamagotchi.getName() has perished.</h1>
+
+  #if ($userTamagotchi.getFoodLevel() <= 0)
+    <p>Lack of food contributed to $userTamagotchi.getName()'s demise.</p>
+  #end
+  #if ($userTamagotchi.getSleepLevel() <= 0)
+    <p>Lack of sleep contributed to $userTamagotchi.getName()'s demise.</p>
+  #end
+  #if ($userTamagotchi.getFunLevel() <= 0)
+    <p>Lack of fun contributed to $userTamagotchi.getName()'s demise.</p>
+  #end
+
   <form action="/" method="get">
-      <button type="submit" class="btn btn-default" id="goBack">Maybe Next Time Will Be Different?</button>
+      <button type="submit" class="btn btn-danger form-control" id="goBack">Maybe Next Time Will Be Different?</button>
   </form>
 
 #elseif ($feed)
   <h1>You fed $userTamagotchi.getName()!</h1>
   <form action="/activities" method="post">
-      <button type="submit" class="btn btn-default" id="goBack">Now Do Something Else</button>
+      <button type="submit" class="btn btn-primary form-control" id="goBack">Now Do Something Else</button>
   </form>
 
 #elseif ($sleep)
   <h1>$userTamagotchi.getName() takes a nap!</h1>
   <form action="/activities" method="post">
-      <button type="submit" class="btn btn-default" id="goBack">Now Do Something Else</button>
+      <button type="submit" class="btn btn-primary form-control" id="goBack">Now Do Something Else</button>
   </form>
 
 #elseif ($play)
   <h1>You play with $userTamagotchi.getName()!</h1>
   <form action="/activities" method="post">
-      <button type="submit" class="btn btn-default" id="goBack">Now Do Something Else</button>
+      <button type="submit" class="btn btn-primary form-control" id="goBack">Now Do Something Else</button>
   </form>
 
 #else
@@ -52,7 +63,7 @@
   #end
 
   <form action="/activities" method="post">
-      <button type="submit" class="btn btn-default" id="goBack">Now Do Something Else</button>
+      <button type="submit" class="btn btn-primary form-control" id="goBack">Now Do Something Else</button>
   </form>
 
 #end

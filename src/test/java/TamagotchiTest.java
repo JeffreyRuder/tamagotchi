@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class TamagotchiTest {
 
+  //Unit tests all passed before Timer member variable was added to class.
+
+  //Implementing timer appears to have broken expected values for assert statements.
+
   @Test
   public void tamagotchiInstantiatesCorrectly_true() {
     Tamagotchi sparky = new Tamagotchi("Sparky");

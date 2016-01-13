@@ -125,7 +125,10 @@ public class Tamagotchi {
   public Timer getTimer() {
     mTimer = new Timer();
     return mTimer;
-    // mTimer.schedule (new ReduceTask(0, 600));
+  }
+
+  public void cancelTimer() {
+    mTimer.cancel();
   }
 
   public class ReduceStats extends TimerTask {

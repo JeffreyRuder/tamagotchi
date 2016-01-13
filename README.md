@@ -1,25 +1,30 @@
-# Java/Spark/Velocity File Structure Template
+# Tamagotchi Game
 
-#### January 5, 2016
+#### January 12, 2016
 
-#### By Midori Bowen and Jeffrey Ruder
+#### By Chris Siems and Jeffrey Ruder
 
 ## Description
 
-This is a template file structure for use in Epicodus Java/Spark/Velocity projects.
+This is a project emulating the popular Tamagotchi toys, circa the late 1990s.
+
+## Features
+
+* Name your Tamagotchi
+* Maintain it's food, sleep, and fun levels
+* Food, sleep, and fun levels decrease over time
+* If your Tamagotchi dies, adopt a new healthy one
 
 ## How To Use
 
-* Make a directory for your project and initialize a git repository.
-* Pull this file structure template from GitHub: `git pull https://github.com/JeffreyRuder/java-spark-template.git`
+* Pull or clone this repository.
+* Make sure you have Gradle and Java installed
+* Navigate to the project's directory and `gradle run`
 
-OR:
+## Strategy Guide (for elite players only)
 
-* Fork this repository from GitHub and rename it
-
-## Please Make This Better
-
-Please fork this repository and send a pull request if something in here could be better.
+* A Tamagotchi starts with food, sleep, and fun level at 10.
+* Food, sleep, and fun levels all decrease by 1 every 5 seconds.
 
 ## Technologies Used
 
